@@ -350,7 +350,7 @@ export default function OperationsPanel({ apiUrl }) {
       <aside className="ops-sidebar">
         <a className="ops-brand" href={`${wheelBase}/admin`}>
           <img src="/armeria.png" alt="" />
-          <span><strong>ARMERIA</strong><small>FORTUNE CONTROL</small></span>
+          <span><strong>Armeria</strong><small>Pannello Di Controllo</small></span>
         </a>
         <nav>
           <button className={tab === 'sale' ? 'active' : ''} onClick={() => setTab('sale')}><span>＋</span> Nuova vendita</button>
