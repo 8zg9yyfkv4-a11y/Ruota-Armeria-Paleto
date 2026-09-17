@@ -99,10 +99,10 @@ function App() {
     const robotsMeta = document.querySelector('meta[name="robots"]')
 
     if (isAdminPage) {
-      document.title = 'Amministrazione | LSC Ruota'
+      document.title = 'Amministrazione | Armeria Paleto'
       robotsMeta?.setAttribute('content', 'noindex, nofollow')
     } else {
-      document.title = 'LSC Ruota della Fortuna | Los Santos Custom'
+      document.title = 'Ruota della Fortuna | Armeria Paleto'
       robotsMeta?.setAttribute('content', 'index, follow')
     }
   }, [isAdminPage])
@@ -357,8 +357,8 @@ function WheelApp() {
 
           <img
             className="brand-logo welcome-brand-logo"
-            src="/lsc-logo.png"
-            alt="Los Santos Custom"
+            src="/armeria.png"
+            alt="Armeria Paleto"
           />
 
           <h1>
@@ -475,8 +475,8 @@ function WheelApp() {
 
           <img
             className="brand-logo welcome-brand-logo"
-            src="/lsc-logo.png"
-            alt="Los Santos Custom"
+            src="/armeria.png"
+            alt="Armeria Paleto"
           />
 
           <h1>
@@ -556,8 +556,8 @@ function WheelApp() {
 
               <img
                 className="brand-logo wheel-brand-logo"
-                src="/lsc-logo.png"
-                alt="Los Santos Custom"
+                src="/armeria.png"
+                alt="Armeria Paleto"
               />
 
               <div className="top-badge">
@@ -577,7 +577,7 @@ function WheelApp() {
             </div>
 
             <div className="wheel-status-strip" aria-hidden="true">
-              <span>LSC FORTUNE DRIVE</span>
+              <span>ARMERIA FORTUNE DRIVE</span>
               <span className="wheel-system-status">
                 <i /> SYSTEM ONLINE
               </span>
@@ -654,7 +654,7 @@ function WheelApp() {
                     <div className="center-ring">
                       <img
                         className="center-logo"
-                        src="/lsc-logo.png"
+                        src="/armeria.png"
                         alt=""
                         aria-hidden="true"
                         style={{
@@ -751,8 +751,8 @@ function WheelApp() {
 
             <img
               className="brand-logo result-brand-logo"
-              src="/lsc-logo.png"
-              alt="Los Santos Custom"
+              src="/armeria.png"
+              alt="Armeria Paleto"
             />
 
             <div className="result-badge">
@@ -816,7 +816,7 @@ function WheelApp() {
       <footer className="global-footer">
 
         <span>
-          LOS SANTOS CUSTOM
+          ARMERIA PALETO
         </span>
 
         <span className="footer-separator">
@@ -1459,8 +1459,8 @@ function AdminPanel({ isAddUserPage = false }) {
         <section className="admin-login admin-loading-card">
           <img
             className="brand-logo admin-brand-logo"
-            src="/lsc-logo.png"
-            alt="Los Santos Custom"
+            src="/armeria.png"
+            alt="Armeria Paleto"
           />
           <div className="admin-badge">AREA RISERVATA</div>
           <h1>
@@ -1485,8 +1485,8 @@ function AdminPanel({ isAddUserPage = false }) {
 
           <img
             className="brand-logo admin-brand-logo"
-            src="/lsc-logo.png"
-            alt="Los Santos Custom"
+            src="/armeria.png"
+            alt="Armeria Paleto"
           />
 
           <div className="admin-badge">
@@ -1566,7 +1566,7 @@ function AdminPanel({ isAddUserPage = false }) {
           </form>
 
           <div className="admin-login-footer">
-            LOS SANTOS CUSTOM
+            ARMERIA PALETO
           </div>
 
         </section>
@@ -1590,8 +1590,8 @@ function AdminPanel({ isAddUserPage = false }) {
         <section className="admin-login admin-user-card">
           <img
             className="brand-logo admin-brand-logo"
-            src="/lsc-logo.png"
-            alt="Los Santos Custom"
+            src="/armeria.png"
+            alt="Armeria Paleto"
           />
 
           <div className="admin-badge">GESTIONE ACCESSI</div>
@@ -1743,8 +1743,8 @@ function AdminPanel({ isAddUserPage = false }) {
 
             <img
               className="brand-logo admin-dashboard-logo"
-              src="/lsc-logo.png"
-              alt="Los Santos Custom"
+              src="/armeria.png"
+              alt="Armeria Paleto"
             />
 
             <div className="admin-badge">
@@ -1761,7 +1761,7 @@ function AdminPanel({ isAddUserPage = false }) {
             <p>
               Gestione codici e
               risultati delle
-              ruote LSC.
+              ruote ARMERIA.
             </p>
 
           </div>
@@ -2241,7 +2241,7 @@ function AdminPanel({ isAddUserPage = false }) {
 
         <footer className="admin-footer">
 
-          LOS SANTOS CUSTOM
+          ARMERIA PALETO
 
           <span>
             •
