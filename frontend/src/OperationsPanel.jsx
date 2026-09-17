@@ -214,7 +214,7 @@ export default function OperationsPanel({ apiUrl }) {
       })
       setGenerated(data.sales || [])
       setNotice(data.discordLogged
-        ? 'Vendita salvata e inviata nel canale Log Fatture.'
+        ? 'Codice Generato'
         : 'Vendita salvata. Il log Discord non è stato consegnato.')
       await loadSales()
       if (isAdmin) await loadAnalytics(range)
@@ -419,7 +419,7 @@ export default function OperationsPanel({ apiUrl }) {
                   <strong>{money.format((wheels.find((item) => String(item.id) === String(wheel))?.price || 0) * (Number(quantity) || 0))}</strong>
                 </div>
                 <button className="ops-primary" type="submit" disabled={creating || !wheel}>
-                  {creating ? <><i className="ops-loader" /> Registrazione…</> : <>Conferma vendita e genera codice <span>→</span></>}
+                  {creating ? <><i className="ops-loader" /> Registrazione…</> : <>Genera Codice <span>→</span></>}
                 </button>
               </form>
             </section>
