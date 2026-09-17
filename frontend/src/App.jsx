@@ -5,18 +5,18 @@ import OperationsPanel from './OperationsPanel'
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 const SPIN_DURATION_MS = 6500
 const WHEEL_COLORS = [
-  '#061a3a',
-  '#0d66d2',
-  '#092653',
-  '#128ce8',
-  '#0b356e',
-  '#2d78d8',
-  '#061f45',
-  '#159adb',
-  '#10457f',
-  '#3a8af0',
-  '#082b5b',
-  '#1564b7',
+  '#211a13',
+  '#8a642d',
+  '#332719',
+  '#b8873f',
+  '#4a351d',
+  '#c99c51',
+  '#201813',
+  '#9f7333',
+  '#563d20',
+  '#d1a85c',
+  '#2b2017',
+  '#a87a38',
 ]
 
 async function readJson(response) {
