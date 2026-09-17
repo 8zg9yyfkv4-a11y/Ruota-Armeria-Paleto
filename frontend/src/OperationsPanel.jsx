@@ -261,7 +261,7 @@ export default function OperationsPanel({ apiUrl }) {
       })
       setOperatorId('')
       setOperatorName('')
-      setNotice('Operatore abilitato. Ora può accedere con Discord.')
+      setNotice('Dipendente abilitato. Ora può accedere con Discord.')
       await loadOperators()
     } catch (requestError) {
       setError(requestError.message)
@@ -374,7 +374,7 @@ export default function OperationsPanel({ apiUrl }) {
           </div>
           <div className="ops-account">
             {user.avatar ? <img src={user.avatar} alt="" /> : <span className="ops-avatar-fallback">{user.displayName?.slice(0, 1)}</span>}
-            <div><strong>{user.displayName}</strong><small>{isAdmin ? 'Amministratore' : 'Operatore'}</small></div>
+            <div><strong>{user.displayName}</strong><small>{isAdmin ? 'Direzione' : 'Dipendente'}</small></div>
             <button onClick={logout} title="Esci">↪</button>
           </div>
         </header>
@@ -456,13 +456,13 @@ export default function OperationsPanel({ apiUrl }) {
               </div>
               <div className="ops-table-wrap">
                 <table className="ops-table">
-                  <thead><tr><th>Codice</th><th>Ruota</th>{isAdmin && <th>Operatore</th>}<th>Importo</th><th>Stato</th><th>Data</th><th>Risultato</th>{isAdmin && <th />}</tr></thead>
+                  <thead><tr><th>Codice</th><th>Ruota</th>{isAdmin && <th>Dipendente</th>}<th>Importo</th><th>Stato</th><th>Data</th><th>Risultato</th>{isAdmin && <th />}</tr></thead>
                   <tbody>
                     {filteredSales.map((sale) => (
                       <tr key={sale.id}>
                         <td data-label="Codice"><button className="ops-code-chip" onClick={() => navigator.clipboard?.writeText(sale.code)}>{sale.code}</button></td>
                         <td data-label="Ruota"><strong>{sale.wheelName.replace(/^RUOTA\s+/i, '')}</strong></td>
-                        {isAdmin && <td data-label="Operatore"><span className="ops-person">{sale.operatorName}<small>{sale.operatorId}</small></span></td>}
+                        {isAdmin && <td data-label="Dipendente"><span className="ops-person">{sale.operatorName}<small>{sale.operatorId}</small></span></td>}
                         <td data-label="Importo">{money.format(sale.amount)}</td>
                         <td data-label="Stato"><span className={`ops-status is-${sale.status}`}><i />{statusLabel(sale.status)}</span></td>
                         <td data-label="Data">{dateTime.format(new Date(sale.createdAt))}</td>
@@ -530,7 +530,7 @@ export default function OperationsPanel({ apiUrl }) {
               <div className="ops-panel-heading"><span className="ops-panel-icon">＋</span><div><span>NUOVO ACCESSO</span><h2>Abilita un operatore</h2></div></div>
               <form className="ops-operator-form" onSubmit={addOperator}>
                 <label>ID DISCORD<input value={operatorId} onChange={(event) => setOperatorId(event.target.value.replace(/\D/g, '').slice(0, 22))} placeholder="123456789012345678" required /></label>
-                <label>NOME DI RIFERIMENTO<input value={operatorName} onChange={(event) => setOperatorName(event.target.value.slice(0, 64))} placeholder="Nome operatore" required /></label>
+                <label>NOME DI RIFERIMENTO<input value={operatorName} onChange={(event) => setOperatorName(event.target.value.slice(0, 64))} placeholder="Nome Dipendente" required /></label>
                 <button className="ops-primary" disabled={operatorBusy}>{operatorBusy ? 'Salvataggio…' : 'Abilita accesso Discord'}</button>
               </form>
               <p className="ops-help">Al primo accesso Discord, nome e avatar verranno aggiornati automaticamente. Proprietario e Direzione non devono essere aggiunti.</p>
@@ -541,7 +541,7 @@ export default function OperationsPanel({ apiUrl }) {
                 {operators.map((operator) => (
                   <div key={operator.discordId}>
                     {operator.avatar ? <img src={operator.avatar} alt="" /> : <span>{operator.displayName?.slice(0, 1)}</span>}
-                    <div><strong>{operator.displayName}</strong><small>{operator.discordId} • {operator.role === 'admin' ? 'Admin' : 'Operatore'}</small></div>
+                    <div><strong>{operator.displayName}</strong><small>{operator.discordId} • {operator.role === 'admin' ? 'Direzione' : 'Dipendente'}</small></div>
                     <button className={operator.active ? 'is-on' : 'is-off'} disabled={operator.role === 'admin'} onClick={() => toggleOperator(operator)}>{operator.active ? 'Attivo' : 'Disattivato'}</button>
                   </div>
                 ))}

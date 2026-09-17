@@ -236,7 +236,7 @@ async function sendSaleLog(sales, actor) {
     embeds: [{
       title: '🧾 Nuova vendita Ruota della Fortuna', color: 0x1687ff,
       fields: [
-        { name: 'Operatore', value: `${actor.displayName}\n<@${actor.discordId}>`, inline: true },
+        { name: 'Dipendente', value: `${actor.displayName}\n<@${actor.discordId}>`, inline: true },
         { name: 'Ruota', value: sales[0].wheelName, inline: true },
         { name: 'Totale vendita', value: `$${total.toLocaleString('it-IT')}`, inline: true },
         { name: sales.length > 1 ? 'Codici emessi' : 'Codice emesso', value: codes },
@@ -532,7 +532,7 @@ app.patch('/api/operators/:discordId', requireSession, requireAdmin, async (req,
     return res.status(400).json({ success: false, message: 'Non puoi disattivare questo account amministrativo.' })
   }
   const operator = await store.setOperatorActive(discordId, Boolean(req.body.active))
-  if (!operator) return res.status(404).json({ success: false, message: 'Operatore non trovato.' })
+  if (!operator) return res.status(404).json({ success: false, message: 'Dipendente non trovato.' })
   await store.addAudit({
     actorId: req.user.discordId, actorName: req.user.displayName,
     action: operator.active ? 'operator.enable' : 'operator.disable', targetType: 'operator', targetId: discordId,
