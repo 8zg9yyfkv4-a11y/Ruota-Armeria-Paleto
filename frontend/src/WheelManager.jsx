@@ -3,7 +3,7 @@ import './WheelManager.css'
 
 const emojis = ['🎁', '💵', '💰', '🪙', '🚗', '🏎️', '🚘', '🏆', '👑', '💎', '⭐', '🍔', '🥤', '🍕', '📦', '🧰', '🔧', '🎨', '🔫', '🎟️', '🔄', '❌', '🔥', '🍀', '⚡', '🎉', '🛞', '⛽', '🏍️', '🛠️', '🎯', '🎲']
 const types = [['none', 'Nessun premio'], ['cash', 'Denaro'], ['vehicle', 'Veicolo'], ['material', 'Materiale'], ['other', 'Altro'], ['free_spin', 'Giro gratuito']]
-const colors = ['#173345', '#9d752c', '#234654', '#775624', '#18313e', '#ad8c47']
+const colors = ['#2a241b', '#9d752c', '#40331f', '#775624', '#33281d', '#ad8c47']
 const money = n => n == null ? 'Da definire' : new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
 
 export default function WheelManager({ api, onPublished, onDirtyChange }) {
