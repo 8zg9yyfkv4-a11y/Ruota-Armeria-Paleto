@@ -1285,7 +1285,7 @@ h1 span {
 }
 
 /* =====================================================
-   LSC 2026 — AUTOMOTIVE RESPONSIVE REDESIGN
+   ARMERIA PALETO 2026 — AUTOMOTIVE RESPONSIVE REDESIGN
 ===================================================== */
 
 :root {
@@ -1478,7 +1478,7 @@ a:focus-visible {
 .welcome-card::after,
 .result-card::after,
 .admin-login::after {
-  content: "LSC // 01";
+  content: "ARMERIA PALETO";
   position: absolute;
   right: 17px;
   bottom: 13px;
@@ -2566,7 +2566,7 @@ a:focus-visible {
 }
 
 /* =====================================================
-   LSC OPERATIONS — DISCORD CONTROL ROOM
+   ARMERIA PALETO OPERATIONS — DISCORD CONTROL ROOM
 ===================================================== */
 
 .ops-shell {
@@ -4651,7 +4651,7 @@ a:focus-visible {
 }
 
 /* =====================================================
-   LSC VISUAL REFRESH — BRAND SLICE
+   ARMERIA PALETO VISUAL REFRESH — BRAND SLICE
 ===================================================== */
 
 :root {
@@ -4673,7 +4673,7 @@ a:focus-visible {
 }
 
 /* =====================================================
-   LSC FINAL EXPERIENCE — FIVE M READY
+   ARMERIA PALETO FINAL EXPERIENCE — FIVE M READY
 ===================================================== */
 
 :root {

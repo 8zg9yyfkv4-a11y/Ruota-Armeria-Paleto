@@ -165,12 +165,12 @@ class CommandCenterData(commands.Cog):
         return web.json_response({"ok":self.bot.is_ready(),"service":"lsc-readonly-bridge","version":2})
 
     def authenticate(self,request):
-        stamp=request.headers.get('X-LSC-Time','')
+        stamp=request.headers.get('X-ARMERIA PALETO-Time','')
         try:
             if abs(time.time()-int(stamp))>60: raise ValueError()
         except ValueError: raise web.HTTPUnauthorized()
         signature=hmac.new(self.key.encode(),f"{stamp}\nGET\n{request.path_qs}".encode(),hashlib.sha256).hexdigest()
-        if not hmac.compare_digest(signature,request.headers.get('X-LSC-Signature','')): raise web.HTTPUnauthorized()
+        if not hmac.compare_digest(signature,request.headers.get('X-ARMERIA PALETO-Signature','')): raise web.HTTPUnauthorized()
 
     async def member(self,user_id):
         guild=self.bot.get_guild(GUILD)

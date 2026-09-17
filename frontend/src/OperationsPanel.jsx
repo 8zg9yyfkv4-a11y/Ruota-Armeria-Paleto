@@ -327,7 +327,7 @@ export default function OperationsPanel({ apiUrl }) {
         <div className="ops-orb ops-orb-one" />
         <div className="ops-orb ops-orb-two" />
         <section className="ops-login-card">
-          <div className="ops-live-pill"><i /> AREA OPERATORI LSC</div>
+          <div className="ops-live-pill"><i /> AREA OPERATORI ARMERIA</div>
           <img src="/armeria.png" alt="Los Santos Custom" />
           <span className="ops-kicker">CONTROL ROOM</span>
           <h1>Ruota della <em>Fortuna</em></h1>
@@ -337,7 +337,7 @@ export default function OperationsPanel({ apiUrl }) {
             <DiscordMark /> Continua con Discord
           </a>
           <a className="ops-back-link" href={`${wheelBase}/`}>← Torna alla ruota</a>
-          <small>Nessuna password LSC viene salvata.</small>
+          <small>Nessuna password ARMERIA viene salvata.</small>
         </section>
       </main>
     )
@@ -350,7 +350,7 @@ export default function OperationsPanel({ apiUrl }) {
       <aside className="ops-sidebar">
         <a className="ops-brand" href={`${wheelBase}/admin`}>
           <img src="/armeria.png" alt="" />
-          <span><strong>LSC</strong><small>FORTUNE CONTROL</small></span>
+          <span><strong>ARMERIA</strong><small>FORTUNE CONTROL</small></span>
         </a>
         <nav>
           <button className={tab === 'sale' ? 'active' : ''} onClick={() => setTab('sale')}><span>＋</span> Nuova vendita</button>
@@ -367,9 +367,9 @@ export default function OperationsPanel({ apiUrl }) {
 
       <section className="ops-workspace">
         <header className="ops-topbar">
-          <button className="ops-mobile-brand" onClick={() => setTab('sale')}><img src="/armeria.png" alt="LSC" /></button>
+          <button className="ops-mobile-brand" onClick={() => setTab('sale')}><img src="/armeria.png" alt="ARMERIA" /></button>
           <div>
-            <span className="ops-eyebrow">LOS SANTOS CUSTOM</span>
+            <span className="ops-eyebrow">ARMERIA PALETO</span>
             <h1>{tab === 'sale' ? 'Nuova vendita' : tab === 'sales' ? 'Registro vendite' : tab === 'dashboard' ? 'Andamento attività' : tab === 'wheels' ? 'Ruote e premi' : 'Gestione operatori'}</h1>
           </div>
           <div className="ops-account">

@@ -23,7 +23,7 @@ SSO_KEY=os.getenv('COMMAND_CENTER_SSO_KEY','')
 SESSION_SECRET=os.getenv('SESSION_SECRET') or secrets.token_urlsafe(48)
 # Only login sessions are ephemeral; accounting records remain in the bot DB.
 SESSIONS={}
-app=FastAPI(title='LSC Gestionale',version='2.0.0')
+app=FastAPI(title='ARMERIA PALETO Gestionale',version='2.0.0')
 app.add_middleware(SessionMiddleware,secret_key=SESSION_SECRET,session_cookie='lsc_cc_v2',
  same_site='lax',https_only=PUBLIC_BASE_URL.startswith('https://'),max_age=43200)
 
@@ -44,7 +44,7 @@ async def bridge(path):
     signature=hmac.new(BRIDGE_KEY.encode(),f'{stamp}\nGET\n{path}'.encode(),hashlib.sha256).hexdigest()
     try:
         async with httpx.AsyncClient(timeout=25) as client:
-            result=await client.get(BRIDGE_URL+path,headers={'X-LSC-Time':stamp,'X-LSC-Signature':signature})
+            result=await client.get(BRIDGE_URL+path,headers={'X-ARMERIA PALETO-Time':stamp,'X-ARMERIA PALETO-Signature':signature})
         if result.status_code==403: raise HTTPException(403,'Ruolo o appartenenza al server non autorizzati')
         if result.status_code!=200: raise HTTPException(503,'Database del bot momentaneamente non raggiungibile. Nessun dato è stato modificato.')
         return result.json()
@@ -86,7 +86,7 @@ async def sso(request:Request,code:str):
     if not expected or len(code)>128: raise HTTPException(400,'Sessione di accesso non valida')
     try:
         async with httpx.AsyncClient(timeout=20) as client:
-            reply=await client.post(WHEEL_API+'/api/command-center/exchange',headers={'X-LSC-SSO-Key':SSO_KEY},json={'code':code})
+            reply=await client.post(WHEEL_API+'/api/command-center/exchange',headers={'X-ARMERIA PALETO-SSO-Key':SSO_KEY},json={'code':code})
         if reply.status_code!=200: raise HTTPException(401,'Accesso scaduto, ripeti il login')
         identity=reply.json()
         if not secrets.compare_digest(str(identity.get('state','')),expected): raise HTTPException(400,'Stato di accesso non valido')

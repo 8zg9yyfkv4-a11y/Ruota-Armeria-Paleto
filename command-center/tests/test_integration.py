@@ -82,11 +82,11 @@ def test_hmac_and_expiry():
     cog=object.__new__(data.CommandCenterData); cog.key='a'*40
     stamp=str(int(time.time())); path='/lsc/data/fatture/111?offset=0'
     sig=hmac.new(cog.key.encode(),f'{stamp}\nGET\n{path}'.encode(),hashlib.sha256).hexdigest()
-    request=SimpleNamespace(path_qs=path,headers={'X-LSC-Time':stamp,'X-LSC-Signature':sig})
+    request=SimpleNamespace(path_qs=path,headers={'X-ARMERIA PALETO-Time':stamp,'X-ARMERIA PALETO-Signature':sig})
     cog.authenticate(request)
     request.path_qs='/lsc/data/fatture/222'
     with pytest.raises(web.HTTPUnauthorized): cog.authenticate(request)
-    request.headers['X-LSC-Time']='0'
+    request.headers['X-ARMERIA PALETO-Time']='0'
     with pytest.raises(web.HTTPUnauthorized): cog.authenticate(request)
 
 def test_roles_use_live_membership_and_not_grade_for_direction():

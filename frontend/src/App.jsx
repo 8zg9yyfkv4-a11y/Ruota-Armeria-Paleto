@@ -352,7 +352,7 @@ function WheelApp() {
 
           <div className="top-badge">
             <span className="badge-dot" />
-            LSC • SISTEMA RUOTA DELLA FORTUNA
+            ARMERIA • SISTEMA RUOTA DELLA FORTUNA
           </div>
 
           <img
@@ -362,7 +362,7 @@ function WheelApp() {
           />
 
           <h1>
-            Benvenuto a LSC
+            Benvenuto a ARMERIA
             <span>
               Ruota della Fortuna
             </span>
@@ -595,7 +595,7 @@ function WheelApp() {
               <div className="wheel-led-ring" aria-hidden="true" />
 
               <div className="wheel-hud wheel-hud-left" aria-hidden="true">
-                <small>LSC</small>
+                <small>ARMERIA</small>
                 <strong>01</strong>
               </div>
 
